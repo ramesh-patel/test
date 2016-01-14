@@ -23,19 +23,30 @@ var assert = require('assert');
  }
  */
 var formdata2 = {
-    url: 'http://logicbudslogistics.elasticbeanstalk.com/api/pinocde', //URL to hit
-    method: 'HTTPGET',
+    url: 'http://www.logicbudslogistics.elasticbeanstalk.com/api/pincode', //URL to hit
+    method : 'HTTPGET'
 
 };
 
 
 
-//For POST
+//Track/To get shipment details   **working
+
+var uri = 'http://www.logicbudslogistics.elasticbeanstalk.com/api/shippment/369310187036';
+
+request.get(uri, function(err,res,body) {
+
+    console.log("Track shipment details",JSON.parse(body));
+});
+
+
+
+//For POST  order    **working
 
 var formdata = {
     url: 'http://logicbudslogistics.elasticbeanstalk.com/api/shippment', //URL to hit
     method: 'HTTPPOST',
-    form: {
+    data: {
 
         "OrderID": "OD005",
         "Buyer": {
@@ -79,139 +90,42 @@ var formdata = {
     }
 
 };
-request(formdata, function (e,r, b) {
+request.post(formdata, function (e,r, b) {
 
-    console.log("<<<-------------->>>",b);
- //   console.log(formdata.form);
-    //  assert.equal(e, null, 'Error occured');
-    //   assert.equal(r.status, 200, 'Wrong Status');
+    console.log("<<<-post order------>>>>>>> [posted]", b);
+});
+
+
+
+
+//Update Order- This is to update shipment status from Lotcart. For example cancelling the order.
+
+var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/369310187025/null';
+
+request.get(uri, function(err,res,body) {
+
+    console.log("Update order",body);
+});
+
+
+
+// Label generation/ This will give the byte code of the pdf file, which then be opened as PDF using filecontent "application/pdf"      ***not working
+
+var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/label/369310187036';
+
+request.get(uri, function(err,res,body) {
+
+    console.log("label generation pdf",body);
+});
+
+
+
+//For GET pincode     **working
+
+request.get('http://logicbudslogistics.elasticbeanstalk.com/api/pincode', function(err , res, body) {
+
+    console.log("(pincode retrival========>>>>>>>>>>>>",body);
 
 });
 
 
-//For GET {ID}
-/*
-var formdata1 = {
-    url: 'http://vegostics.com/api/shippment/{ID}', //URL to hit
-    method: 'POST',
-    form: {
-
-        "OrderID": "OD005",
-        "Buyer": {
-            "ContactName": "klnk",
-            "AddressLine1": "knklnkn",
-            "AddressLine2": "knlknlkn",
-            "AddressLine3": "nknlkn",
-            "City": "Bangalore",
-            "StateCode": "KA",
-            "Pincode": 560097,
-            "CountryCode": "IND",
-            "ContactNumber": "435446",
-            "EmailAddress": "xyz@gmail.com"
-        },
-        "Seller": {
-            "ContactName": "lbbljbljblj",
-            "AddressLine1": "lknlknkn",
-            "AddressLine2": "nknnknknl",
-            "AddressLine3": "klnklnkl",
-            "City": "Bangalore",
-            "StateCode": "KA",
-            "Pincode": 560097,
-            "CountryCode": "IND",
-            "VATNumber": 564654,
-            "CSTNumber": 456454,
-            "ContactNumber": "468768464",
-            "EmailAddress": "seller@abcxyz.com"
-        },
-        "Status": "INT ",
-        "CartProducts": [
-            {
-                "ProductID": 30008,
-                "ProductName": "jkbkj",
-                "Quantity": 12,
-                "Price": 100
-            }
-        ],
-        "PaymentMode": "PREPD",
-        "CollectAmount": 200,
-        "DeliveryBoyID": 1
-    }
-
-};
-
-req = request.get(formdata1, function(res) {
-
-    //console.log(formdata1.form.OrderID);
-
-});
-
-*/
-
-//For GET pincode     **response in form of document
-/*
-request.get(formdata2, function(err , res, body) {
-
-    console.log(err,"========>>>>>>>>>>>>",body);
-
-});
-*/
-
-//For PUT update order
-/*
-var formdata3 = {
-    url: 'http://vegostics.com/api/shippment/{ID}/{Status}', //URL to hit
-
-    method: 'PUT',
-    //Lets post the following key/values as form
-    form: {
-
-        "OrderID": "OD005",
-        "Buyer": {
-            "ContactName": "klnk",
-            "AddressLine1": "knklnkn",
-            "AddressLine2": "knlknlkn",
-            "AddressLine3": "nknlkn",
-            "City": "Bangalore",
-            "StateCode": "KA",
-            "Pincode": 560097,
-            "CountryCode": "IND",
-            "ContactNumber": "435446",
-            "EmailAddress": "xyz@gmail.com"
-        },
-        "Seller": {
-            "ContactName": "lbbljbljblj",
-            "AddressLine1": "lknlknkn",
-            "AddressLine2": "nknnknknl",
-            "AddressLine3": "klnklnkl",
-            "City": "Bangalore",
-            "StateCode": "KA",
-            "Pincode": 560097,
-            "CountryCode": "IND",
-            "VATNumber": 564654,
-            "CSTNumber": 456454,
-            "ContactNumber": "468768464",
-            "EmailAddress": "seller@abcxyz.com"
-        },
-        "Status": "INT ",
-        "CartProducts": [
-            {
-                "ProductID": 30008,
-                "ProductName": "jkbkj",
-                "Quantity": 12,
-                "Price": 100
-            }
-        ],
-        "PaymentMode": "PREPD",
-        "CollectAmount": 200,
-        "DeliveryBoyID": 1
-    }
-
-};
-
-
-request.get(formdata3, function(res) {
-
-    console.log(formdata3.form.Status);
-
-});
-*/
