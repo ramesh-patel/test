@@ -45,8 +45,12 @@ request.get(uri, function(err,res,body) {
 
 var formdata = {
     url: 'http://logicbudslogistics.elasticbeanstalk.com/api/shippment', //URL to hit
-    method: 'HTTPPOST',
-    data: {
+    method: 'POST',
+    headers:{
+        'Content-Type':'application/json',
+
+    },
+    body: {
 
         "OrderID": "OD005",
         "Buyer": {
@@ -90,9 +94,10 @@ var formdata = {
     }
 
 };
+formdata.body=JSON.stringify(formdata.body)
 request.post(formdata, function (e,r, b) {
 
-    console.log("<<<-post order------>>>>>>> [posted]", b);
+    console.log("<<<-post order------>>>>>>> [posted]",e, r.headers, r.statusCode,b);
 });
 
 
@@ -100,7 +105,7 @@ request.post(formdata, function (e,r, b) {
 
 //Update Order- This is to update shipment status from Lotcart. For example cancelling the order.
 
-var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/369310187025/null';
+var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/369310187025/addasdsf';
 
 request.get(uri, function(err,res,body) {
 
@@ -119,13 +124,25 @@ request.get(uri, function(err,res,body) {
 });
 
 
-
+var request_to={
+    url:'http://logicbudslogistics.elasticbeanstalk.com/api/pincode',
+    method:'GET'
+}
 //For GET pincode     **working
 
-request.get('http://logicbudslogistics.elasticbeanstalk.com/api/pincode', function(err , res, body) {
+request(request_to, function(err , res, body) {
 
-    console.log("(pincode retrival========>>>>>>>>>>>>",body);
+    console.log("(pincode retrival========>>>>>>>>>>>>",res.statusCode,body);
 
 });
+
+//Rates/ This will provide the shipping charges.
+
+request.get('http://logicbudslogistics.elasticbeanstalk.com/api/rates/140105', function(err , res, body) {
+
+    console.log("Shipping charge(Rs)======>>>>>>>>>>>>",body);
+
+});
+
 
 
