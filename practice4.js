@@ -21,9 +21,9 @@ var req = {
 
 var body = [
     {
-        "email": "ramesh@example.com",
-        "first_name" : "ramesh",
-        "last_name": "patel",
+        "email": "ramesh1@example.com",
+        "first_name" : "ramesh1",
+        "last_name": "patel1",
 
     }
 ]
@@ -33,14 +33,36 @@ var params = {
     //"recipient_id"  : "am9uZXNzc3NzQGV4YW1wbGUuY29t"
 }
 
-var  body1 = {
-    "recipient_id" : "awqawaqwaqwawwqa"
+var params1 = {
+    "custom_field_id" : "r_name",
+    //"recipient_id"  : "am9uZXNzc3NzQGV4YW1wbGUuY29t"
 }
 
-//var uri = "https://api.sendgrid.com/v3/contactdb";
+var  body1 = {
+    "recipient_id" : "YUBhLmNvbQ=="
+}
 
-//Get all list
+var body2 = {
+    "name": "pet",
+    "type": "text"
 
+}
+
+
+
+//Create List  **working
+/*
+contact.lists.createList(body2,function(err,res){
+    if(err) {
+        console(err);
+    } else {
+        console.log(res);
+    }
+});
+*/
+
+//Get all list  **working
+/*
 contact.lists.getAllLists(function(err,res){
     if(err) {
         console(err);
@@ -48,30 +70,96 @@ contact.lists.getAllLists(function(err,res){
         console.log(res);
     }
 });
+*/
 
-
-
-
-//Add list recipient
+//Get single recipients   **working
 /*
-contact.lists.addListRecipients(params,body1,function(err,res){
+ contact.recipients.getRecipient(body1,function(err,res){
+ if(err) {
+ console(err);
+ } else {
+ console.log(res);
+ }
+ });
+*/
+
+//Get all recipients    **working
+/*
+contact.recipients.getRecipients(body,function(err,res){
     if(err) {
         console(err);
     } else {
         console.log(res);
     }
-});
-*/
+});*/
 
-
-
-
-//Add recipient
+//Add recipient to list   **working
 /*
-contact.recipients.addRecipients(body,function(err,res){
+contact.recipients.addRecipients(body,  function(err,res){
     console.log(res);
+    var body = [];
+
+    for(var i= 0;i < res.persisted_recipients.length;i++)
+    {
+        body.push(res.persisted_recipients[i]);
+    }
+
+    contact.lists.addListRecipients(params,body,function(err,res) {
+        console.log(res);
+    });
 });
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
