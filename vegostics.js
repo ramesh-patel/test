@@ -31,7 +31,7 @@ var formdata2 = {
 
 
 //For POST
-/*
+
 var formdata = {
     url: 'http://logicbudslogistics.elasticbeanstalk.com/api/shippment', //URL to hit
     method: 'HTTPPOST',
@@ -79,15 +79,15 @@ var formdata = {
     }
 
 };
-request(formdata, function (e, b) {
+request(formdata, function (e,r, b) {
 
-    console.log("dsfsdfsdfg",b);
+    console.log("<<<-------------->>>",b);
  //   console.log(formdata.form);
     //  assert.equal(e, null, 'Error occured');
     //   assert.equal(r.status, 200, 'Wrong Status');
 
 });
-*/
+
 
 //For GET {ID}
 /*
@@ -148,12 +148,13 @@ req = request.get(formdata1, function(res) {
 */
 
 //For GET pincode     **response in form of document
+/*
+request.get(formdata2, function(err , res, body) {
 
-request.get(formdata2, function(err , res) {
-
-    console.log(err,"========>>>>>>>>>>>>",res);
+    console.log(err,"========>>>>>>>>>>>>",body);
 
 });
+*/
 
 //For PUT update order
 /*
