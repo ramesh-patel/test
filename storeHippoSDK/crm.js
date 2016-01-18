@@ -3,7 +3,7 @@ var store = require("storehippo-nodejs-sdk")({
     access_key : "trial_user"
 });
 
-var request = require("request");
+//var request = require("request");
 
 
 var formdata = {
@@ -18,6 +18,6 @@ var formdata = {
 store.list(formdata, function(err, response){
     if(err) throw err;
     console.log("Error==========>>>>>>>>>>>",err)
-    console.log("Response==========>>>>>>>>",response.statusCode);
+    console.log("Response code=====>>>>>>>>",response.statusCode);
     console.log("Response==========>>>>>>>>",response);
 })
