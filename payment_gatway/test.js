@@ -1,38 +1,39 @@
 var request = require("request");
 var parser = require('xml2json');
+sha256 = require('js-sha256');
 
-//var temp;
+
+
 request.post({
     url: 'https://api.zaakpay.com/checktransaction',
     form:{
-        merchantIdentifier:'9876699565',
-        orderId:'897698973'
+        merchantIdentifier:'51eb974443284de0a95188cd95dad180',
+        orderId:'OID005',
+        mode : 0,
+        checksum : sha256('51eb974443284de0a95188cd95dad180OID0050')
+
     }
 
-
 },function (err, httpResponse, body) {
-
-
-
 
             if (err) throw err;
 
             // console.log("Error==========>>>>>>>>>>>",err)
             // console.log("Response code=====>>>>>>>>",httpResponse.statusCode);
-            console.log("Response==========>>>>>>>>",typeof parser.toJson(body));
-            console.log("Response==========>>>>>>>>", parser.toJson(body));
+            console.log("type of data==========>>>>>>>>",typeof parser.toJson(body));
+            console.log("Response in json==========>>>>>>>>", parser.toJson(body));
 
 
-            var temp = JSON.parse(parser.toJson(body))
+            var temp = JSON.parse(parser.toJson(body));
 
+            var responseStatus = temp.zaakpay_response.response_element.responsecode;
 
-            var responseStatus = temp.zaakpay_response.response_element[0].responsecode;
+            console.log("status code-------------", responseStatus);
 
-            console.log("-------------------", responseStatus);
-
+    console.log(sha256('51eb974443284de0a95188cd95dad180OID0050'));
 
       if(responseStatus==100) {
-
+            console.log("Transaction success");
       }
 
 
