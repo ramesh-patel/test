@@ -119,13 +119,15 @@ request.put(uri, function(err,res,body) {
 
 
 // Label generation/ This will give the byte code of the pdf file, which then be opened as PDF using filecontent "application/pdf"   **working
+/*
 
 var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/label/AWB-LBL-4';
 
 request.get(uri, function(err,res,body) {
 
-    console.log("label generation pdf",err,res.statusCode);
+    console.log("label generation pdf",err,res.statusCode,JSON.parse(body));
 });
+*/
 
 
 
