@@ -6,14 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-
-
 var request = require('request');
-var assert = require('assert');
-
-//post
-//get
-//delete
 
 /*
  var formdata = {
@@ -29,7 +22,6 @@ var formdata2 = {
 };
 
 
-
 //Track/To get shipment details   **working
 /*
 
@@ -39,8 +31,8 @@ request.get(uri, function(err,res,body) {
 
     console.log("Track shipment details",JSON.parse(body));
 });
-
 */
+
 
 
 //For POST  order    **working
@@ -106,21 +98,16 @@ request.post(formdata, function (e,r, b) {
 
 
 //Update Order- This is to update shipment status from Lotcart. For example cancelling the order.  **not working
-/*
-
-var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/AWB-LBL-4/xzcxcv';
+var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/AWB-LBL-4/In-Transit';
 
 request.put(uri, function(err,res,body) {
 
     console.log("Update order",err,res.statusCode,body);
 });
-*/
-
 
 
 // Label generation/ This will give the byte code of the pdf file, which then be opened as PDF using filecontent "application/pdf"   **working
 /*
-
 var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/label/AWB-LBL-4';
 
 request.get(uri, function(err,res,body) {
@@ -128,7 +115,6 @@ request.get(uri, function(err,res,body) {
     console.log("label generation pdf",err,res.statusCode,JSON.parse(body));
 });
 */
-
 
 
 //For GET pincode    **working
