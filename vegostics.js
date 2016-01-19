@@ -32,17 +32,19 @@ var formdata2 = {
 
 //Track/To get shipment details   **working
 /*
-var uri = 'http://www.logicbudslogistics.elasticbeanstalk.com/api/shippment/369310187036';
+
+var uri = 'http://www.logicbudslogistics.elasticbeanstalk.com/api/shippment/AWB-LBL-4';
 
 request.get(uri, function(err,res,body) {
 
     console.log("Track shipment details",JSON.parse(body));
 });
+
 */
 
 
-//For POST  order    **not working
-
+//For POST  order    **working
+/*
 var formdata = {
     url: 'http://logicbudslogistics.elasticbeanstalk.com/api/shippment', //URL to hit
     method: 'POST',
@@ -97,35 +99,34 @@ var formdata = {
 formdata.body=JSON.stringify(formdata.body)
 request.post(formdata, function (e,r, b) {
 
-    console.log("Post order  :",e,/* r.headers*/ r.statusCode,b);
+    console.log("Post order  :",e, r.headers, r.statusCode,b);
 });
 
-
+*/
 
 
 //Update Order- This is to update shipment status from Lotcart. For example cancelling the order.  **not working
-
 /*
-var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/369310187025/addasdsf';
 
-request.get(uri, function(err,res,body) {
+var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/AWB-LBL-4/xzcxcv';
 
-    console.log("Update order",err,res.statusCode);
+request.put(uri, function(err,res,body) {
+
+    console.log("Update order",err,res.statusCode,body);
 });
 */
 
 
 
-// Label generation/ This will give the byte code of the pdf file, which then be opened as PDF using filecontent "application/pdf"   ***not working
-/*
+// Label generation/ This will give the byte code of the pdf file, which then be opened as PDF using filecontent "application/pdf"   **working
 
-var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/label/369310187036';
+var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/label/AWB-LBL-4';
 
 request.get(uri, function(err,res,body) {
 
     console.log("label generation pdf",err,res.statusCode);
 });
-*/
+
 
 
 //For GET pincode    **working
@@ -139,13 +140,16 @@ request(request_to, function(err , res, body) {
     console.log("(pincode retrival========>>>>>>>>>>>>",res.statusCode,body);
 });
 */
-//Rates/ This will provide the shipping charges.
+
+
+//Rates/ This will provide the shipping charges. **working
 /*
-request.get('http://logicbudslogistics.elasticbeanstalk.com/api/rates/140105', function(err , res, body) {
+request.get('http://logicbudslogistics.elasticbeanstalk.com/api/rates/560097', function(err , res, body) {
 
-    console.log("Shipping charge(Rs)",err,res.statusCode);
+    console.log("Shipping charge(Rs)",body);
 
-});*/
+});
+*/
 
 
 
