@@ -7,6 +7,8 @@
  */
 
 var request = require('request');
+var fs=require('fs');
+//var Buffer=require('buffer')
 
 /*
  var formdata = {
@@ -113,6 +115,11 @@ var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/label/AWB-LBL-4';
 request.get(uri, function(err,res,body) {
 
     console.log("label generation pdf",err,res.statusCode,JSON.parse(body));
+    const abc=new Buffer(body, 'base64')
+    console.log(abc.toString('ascii'))
+    fs.writeFile('test.pdf',abc,function(err){
+        console.log('err',err)
+    })
 });
 */
 
