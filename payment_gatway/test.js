@@ -10,7 +10,8 @@ request.post({
         merchantIdentifier:'51eb974443284de0a95188cd95dad180',
         orderId:'OID005',
         mode : 0,
-        checksum : sha256('51eb974443284de0a95188cd95dad180OID0050')
+        security_key : 'de2171d6d41e46b1952ad61f55f8e5a4',
+        checksum : sha256('51eb974443284de0a95188cd95dad180"OID005"0')
 
     }
 
@@ -30,7 +31,7 @@ request.post({
 
             console.log("status code-------------", responseStatus);
 
-    console.log(sha256('51eb974443284de0a95188cd95dad180OID0050'));
+    console.log(sha256("'51eb974443284de0a95188cd95dad180''OID005''0'"));
 
       if(responseStatus==100) {
             console.log("Transaction success");

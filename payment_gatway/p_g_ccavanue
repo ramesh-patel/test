@@ -1,0 +1,43 @@
+var ccavenue = require('ccavenue');
+var request = require('request');
+//required
+ccavenue.setMerchant("Merchant Id");
+ccavenue.setWorkingKey("Working Key");
+ccavenue.setOrderId("OrderId");
+ccavenue.setRedirectUrl("lotcart.com");
+ccavenue.setOrderAmount("Order Amount");
+
+
+    var param = {
+    billing_cust_address: 'Bangalore',
+    billing_cust_name: 'Nitish Kumar'
+};
+ccavenue.setOtherParams(param); //Set Customer Info
+
+
+// Server url where you want to send data to ccavenue
+request.get('/make-payment', function(req, res) {
+    ccavenue.makePayment(res); // It will redirect to ccavenue payment
+});
+
+/*
+// Server url should be as redirect url (which you are passing as Redirect Url).
+server.post('/redirect-url', function response(req, res) {
+    var data = ccavenue.paymentRedirect(req); //It will get response from ccavenue payment.
+
+    if(data.isCheckSumValid == true && data.AuthDesc == 'Y') {
+        // Success
+        // Your code
+    } else if(data.isCheckSumValid == true && data.AuthDesc == 'N') {
+        // Unuccessful
+        // Your code
+    } /!*elseif(data.isCheckSumValid == true && data.AuthDesc == 'B') {
+        // Batch processing mode
+        // Your code
+        console.log("sdfsdf");
+    }*!/ else {
+        // Illegal access
+        // Your code
+    }
+});
+*/
