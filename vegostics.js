@@ -1,27 +1,12 @@
 /**
  * Created with JetBrains WebStorm.
  * User: manusis   By Ramesh Patel
- * Date: 12/01/16
- * Time: 12:21
- * To change this template use File | Settings | File Templates.
+ * Date: 17/01/16
  */
 
 var request = require('request');
 var fs=require('fs');
 //var Buffer=require('buffer')
-
-/*
- var formdata = {
- url: '',
- data: "",
- body:  ""
- }
- */
-var formdata2 = {
-    url: 'http://www.logicbudslogistics.elasticbeanstalk.com/api/pincode', //URL to hit
-    method : 'HTTPGET'
-
-};
 
 
 //Track/To get shipment details   **working
