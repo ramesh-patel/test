@@ -1,0 +1,31 @@
+<!--
+<form id="payment_confirmation" action="https://www.instamojo.com/api/1.1/payment-requests" method="post">
+    <input name="amount" value="200">
+    <input name="purpose" value="freecharge">
+</form>
+-->
+
+
+
+<html>
+<head>
+    <title>INSTAMOZO payment gateway</title>
+
+    <script src="../instamozoTest.js"></script>
+</head>
+<body >
+<div >
+    Loading.....
+</div>
+<div>
+    <form id="payment_confirmation" action="/send" method="post">
+        <!--<input name="X-Auth-Token" value="{{options.headers.X-Auth-Token}}">
+        <input name="X-Auth-Token" value="{{options.headers.X-Auth-Token}}">-->
+        <input name="amount" value="2500">
+        <input name="purpose" value=freecharge>
+
+        <input type="submit" id="submit" value="Confirm "/>
+    </form>
+</div>
+</body>
+</html>
