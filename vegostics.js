@@ -100,12 +100,13 @@ request.post(formdata, function (e,r, b) {
 
 
 //Update Order- This is to update shipment status from Lotcart. For example cancelling the order.  **not working
-var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/AWB-LBL-4/In-Transit';
+/*var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/shippment?id=AWB-LBL-12&status=DVL';
 
 request.put(uri, function(err,res,body) {
 
     console.log("Update order",err,res.statusCode,body);
-});
+
+});*/
 
 
 // Label generation/ This will give the byte code of the pdf file, which then be opened as PDF using filecontent "application/pdf"   **working

@@ -33,7 +33,7 @@ describe(' Test cases for Lotcart Tracking(vegostics)', function () {
         it('Update order', function (done) {
 
             var request = {
-                uri: 'http://logicbudslogistics.elasticbeanstalk.com/api/AWB-LBL-4/INT'
+                uri: 'http://logicbudslogistics.elasticbeanstalk.com/api/shippment?id=AWB-LBL-4&status=DVL'
             };
 
             r.get(request.uri, function (err, res, body) {
@@ -100,7 +100,6 @@ describe(' Test cases for Lotcart Tracking(vegostics)', function () {
             })
         }),
 
-
         it('Label generation', function (done) {
             var request = {
                 uri: 'http://logicbudslogistics.elasticbeanstalk.com/api/label/AWB-LBL-4'
@@ -120,7 +119,6 @@ describe(' Test cases for Lotcart Tracking(vegostics)', function () {
                 done();
             });
         }),
-
 
         it('Get shipping charge', function (done) {
             var request = {
