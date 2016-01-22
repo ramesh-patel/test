@@ -73,8 +73,8 @@ request.post(formdata, function (e,r, b) {
     console.log("Post order  :",e, r.headers, r.statusCode,b);
 });
 
-//Update Order- This is to update shipment status from Lotcart. For example cancelling the order. 
-var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/shippment?id=AWB-LBL-12&status=DVL';
+//Update Order status- This is to update shipment status from Lotcart. For example cancelling the order.
+var uri = 'http://logicbudslogistics.elasticbeanstalk.com/api/shippment?id=AWB-LBL-12&status=DLV';
 request.put(uri, function(err,res,body) {
 
     console.log("Update order",err,res.statusCode,body);

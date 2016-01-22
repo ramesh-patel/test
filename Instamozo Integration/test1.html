@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="instamozoTest" ng-controller="myNoteCtrl">
+
+<h2>Instamozo Payment gateway integration</h2>
+
+<div>
+    <form id="payment_confirmation" action="/send" method="get">
+        <input name="X-Auth-Token" value="{{options.headers.X-Auth-Token}}">
+        <input name="X-Auth-Token" value="{{options.headers.X-Auth-Token}}">
+        <input name="amount" value="2500">
+        <input name="purpose" value=freecharge>
+
+      <input type="submit" id="submit" value="Confirm "/>
+    </form>
+</div>
+<p>
+    <button ng-click="submit()">Submit</button>
+
+</p>
+
+
+<script src="instamozoTest.js"></script>
+
+
+</body>
+</html>
+
+<html ng-app="mobikwik">
+<head>
+    <title>Mobikwik</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="mobikwik.js"></script>
+</head>
+<body ng-controller="mobikwik">
+<form method="post" action="https://test.mobikwik.com/wallet">
+    <input name="email" value="{{data.email}}"/>
+
+    <input name="amount" value="{{data.amount}}"/>
+
+    <input name="cell" value="{{data.cell}}"/>
+
+    <input name="orderid" value="{{data.orderid}}"/>
+
+    <input name="mid" value="{{data.mid}}"/>
+
+    <input name="merchantname" value="{{data.merchantname}}"/>
+
+    <input name="redirecturl" value="{{data.redirecturl}}"/>
+
+    <input name="version" value="{{data.version}}"/>
+
+    <input name="checksum" value="{{data.checksum}}"/>
+
+    <input value="Submit" type="submit"/>
+</form>
+</body>
+</html>
+
+
+
+
