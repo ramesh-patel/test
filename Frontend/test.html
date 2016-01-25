@@ -1,0 +1,40 @@
+<div ms-widget="jobs" style="margin-bottom: 20px">
+    <div ms-widget="ms.entity" ms-data-entity="ms.job_executions" style="margin-bottom: 20px">
+
+        <div style="margin-bottom: 50px"></div>
+        <div class="container ms-fs-16" style="margin-bottom: 50px">
+            <div class="row">
+                <h3>
+                    <div class="col-sm-2">Name</div>
+                    <div class="col-sm-2">Entity</div>
+                    <div class="col-sm-2">Interval</div>
+                    <div class="col-sm-1">Format</div>
+                    <div class="col-sm-3">Command</div>
+                    <div class="col-sm-2">Created on</div>
+
+                </h3>
+
+            </div>
+            <hr>
+        </div>
+
+
+        <div ng-repeat="jobs in store_jobs">
+
+
+            <div class="container ms-fs-16"  style="margin-bottom: 50px">
+                <div class="row">
+                    <div class="col-sm-2"><a href="/test">{{jobs.name}}</a></div>
+                    <div class="col-sm-2">{{jobs.entity}}</div>
+                    <div class="col-sm-2">{{jobs.interval}}</div>
+                    <div class="col-sm-1">{{jobs.format}}</div>
+                    <div class="col-sm-3">{{jobs.command}}</div>
+                    <div class="col-sm-2">{{jobs.created_on}}</div>
+
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -3,8 +3,8 @@ var cheerio = require('cheerio');
 var fs = require("fs");
 var elements = [];
 var sheet = 1;
-var states = [ "Delhi", "Goa" ];
-var j = 2;
+var states = [ "Gujarat", "West%20Bengal", "Uttarakhand", "Uttar%20Pradesh", "Tripura", "Tamil%20Nadu","Sikkim","Rajasthan","Punjab","Puducherry","Odisha","Nagaland","Mizoram","Meghalaya","Manipur","Maharashtra", "Madhya%20Pradesh", "Lakshadweep","Kerala","Karnataka","Jharkhand","Jammu%20and%20Kashmir", "Himachal%20Pradesh","Haryana","Daman%20and%20Diu","Dadra%20and%20Nagar%20Haveli","Chhattisgarh","Chandigarh","Bihar","Assam","Arunachal%20Pradesh", "Andhra%20Pradesh", "Andaman%20and%20Nicobar%20Islands" ];
+var j = states.length;
 
 var check = function(j, next){
     if (j == 0) {

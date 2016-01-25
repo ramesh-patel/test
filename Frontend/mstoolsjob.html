@@ -1,0 +1,109 @@
+<div ms-widget="jobs" style="margin-bottom: 20px">
+    <div ms-widget="ms.entity" ms-data-entity="ms.job_executions" style="margin-bottom: 20px">
+
+
+
+        <div class="container ms-fs-16" style="margin-bottom: 50px">
+            <div class="row">
+
+
+                <table class="table table-striped table-bordered">
+
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Entity</th>
+                        <th>Interval</th>
+                        <th>Format</th>
+                        <th>Command</th>
+                        <th>Created on</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div ng-repeat="jobs in store_jobs"><a href="/test">{{jobs.name}}</a><hr></div>
+                        </td>
+                        <td>
+                            <div ng-repeat="jobs in store_jobs">{{jobs.entity}}<hr></div>
+                        </td>
+                        <td>
+                            <div ng-repeat="jobs in store_jobs">{{jobs.interval}}<hr></div>
+                        </td>
+                        <td>
+                            <div ng-repeat="jobs in store_jobs">{{jobs.format}}<hr></div>
+                        </td>
+                        <td>
+                            <div ng-repeat="jobs in store_jobs">{{jobs.command}}<hr></div>
+                        </td>
+                        <td>
+                            <div ng-repeat="jobs in store_jobs">{{jobs.created_on}}<hr></div>
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div ms-widget="test" style="margin-bottom: 20px">
+
+    <div ms-widget="ms.entity" ms-data-entity="ms.job_executions" style="margin-bottom: 20px" >
+        <div ng-repeat="record in records">
+
+
+
+            <div style="margin-bottom: 50px"></div>
+            <div class="container ms-fs-16" style="margin-bottom: 50px">
+                <div class="row">
+
+
+                    <table class="table table-striped table-bordered">
+
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Last Run At</th>
+                            <th>Last Finished At</th>
+                            <th>Command</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div ng-repeat="jobs in store_jobs"><a href="/test">{{record.name}}</a><hr></div>
+                            </td>
+                            <td>
+                                <div ng-repeat="jobs in store_jobs">{{record.status}}<hr></div>
+                            </td>
+                            <td>
+                                <div ng-repeat="jobs in store_jobs">{{{record.lastRunAt}}<hr></div>
+                            </td>
+                            <td>
+                                <div ng-repeat="jobs in store_jobs">{{record.lastFinishedAt}}<hr></div>
+                            </td>
+                            <td>
+                                <div ng-repeat="jobs in store_jobs">{{record.command}}<hr></div>
+                            </td>
+                        </tr>
+                        </tbody>
+
+                    <div class="col-sm-3">{{record.name}}</div>
+                    <div class="col-sm-3">{{record.status}}</div>
+                    <div class="col-sm-2">{{record.lastRunAt}}</div>
+                    <div class="col-sm-2">{{record.lastFinishedAt}}</div>
+                    <div class="col-sm-2">{{record.command}}</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -260,3 +260,59 @@ request.get(formdata3, function(res) {
 
 });
 
+ms-widget="ms.modal" data-msd-page="test" data-msd-header="{{records}}"
+
+
+
+    <div ms-widget="jobs" style="margin-bottom: 20px">
+
+    <div style="margin-bottom: 50px"></div>
+
+
+    <!--
+    <div ms-widget="ms.entity" ms-data-entity="ms.job_executions" style="margin-bottom: 20px">
+    -->
+    <div class="container ms-fs-16"  style="margin-bottom: 50px" >
+    <table class="table table-striped table-bordered" >
+    <thead>
+    <tr>
+    <th>
+    <div class="col-sm-2">Name</div>
+    </th>
+    <th>
+    <div class="col-sm-2">Entity</div>
+    </th>
+    <th>
+    <div class="col-sm-1">Interval</div>
+    </th>
+    <th>
+    <div class="col-sm-1">Format</div>
+    </th>
+    <th>
+    <div class="col-sm-2">Command</div>
+    </th>
+    <th>
+    <div class="col-sm-2">Created on</div>
+</th>
+<th>
+<div class="col-sm-2">Created by</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<div ng-repeat="jobs in store_jobs">
+    <div class="row">
+    <div class="col-sm-2"> <a >{{jobs.name}}</a></div>
+<div class="col-sm-2">{{jobs.entity}}</div>
+<div class="col-sm-1">{{jobs.interval}}</div>
+<div class="col-sm-1">{{jobs.format}}</div>
+<div class="col-sm-2">{{jobs.command}}</div>
+<div class="col-sm-2">{{jobs.created_on}}</div>
+<div class="col-sm-2">{{jobs._created_by}}</div>
+
+</div>
+</div>
+</tbody>
+</table>
+</div>
+</div>
