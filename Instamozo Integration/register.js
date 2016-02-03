@@ -47,8 +47,8 @@ function paynow() {
     console.log('=hrere=======');
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', '',true);
-    xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://www.instamojo.com/api/1.1/payment-requests/');
+    xhr.open('GET', '',true);
+    xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://www.instamojo.com/api/1.1/debug/');
     xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET,POST');
     xhr.setRequestHeader('Content-type', 'application/json');
 
@@ -65,14 +65,16 @@ function paynow() {
         'data': {
             'amount': '340',
             'purpose': 'shopping',
-            redirectUrl : "https://www.instamojo.com/api/1.1/payment-requests/",
+            redirectUrl : "https://www.instamojo.com/api/1.1/debug/",
         },
     });
+
+
     xhr.onload = function (body) {
         if (this.status === 200) {
             console.log('=success=======', body);
-            console.log(this.readyState);
-            console.log(this.response);
+            //console.log(this.readyState);
+            console.log("-------------------",this.responseType);
 
             // r.redirectUrl(r);
 
