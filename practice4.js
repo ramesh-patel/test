@@ -9,12 +9,12 @@
  */
 
 var request= require('request');
-var contact= require('sendgrid-contacts')(api_key= "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");
+var contact= require('sendgrid-contacts')(api_key= "");
 
 var req = {
     headers:{
 
-        "Authorization": "Bearer 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"
+        "Authorization": ""
 
     }
 };
@@ -30,7 +30,7 @@ var body = [
 
 var params = {
     "list_id" : 46123,
-    //"recipient_id"  : "am9uZXNzc3NzQGV4YW1wbGUuY29t"
+    //"recipient_id"  : ""
 }
 
 var params1 = {
@@ -39,7 +39,7 @@ var params1 = {
 }
 
 var  body1 = {
-    "recipient_id" : "YUBhLmNvbQ=="
+    "recipient_id" : "="
 }
 
 var body2 = {
