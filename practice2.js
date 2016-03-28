@@ -18,11 +18,11 @@ var connect = {
     //host: 'https://sendgrid.com/',
     // path: 'https://sendgrid.com/marketing_campaigns/lists/46123',
     // method: 'POST',
-    // headers: { "api_key" : "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" },
-    api_user : 'marketingmailer',
-    api_key : 'barton$123',
-    // Username : 'marketingmailer',
-    //password : 'barton$123',
+    // headers: { "api_key" : "" },
+    api_user : '',
+    api_key : '',
+    // Username : '',
+    //password : '',
     form : {
         name : "ramesh",
         type : "text"
@@ -46,11 +46,11 @@ request.post(connect, function(error, response, body){
             //host: 'https://sendgrid.com/',
             // path: 'https://sendgrid.com/marketing_campaigns/lists/46123',
             // method: 'POST',
-            // headers: { "api_key" : "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" },
-            //api_user : 'marketingmailer',
-            //api_key : 'barton$123',
-            // Username : 'marketingmailer',
-            //password : 'barton$123',
+            // headers: { "api_key" : "" },
+            //api_user : '',
+            //api_key : '',
+            // Username : '',
+            //password : '',
             form : {
                 name : "ramesh",
                 type : "text"
