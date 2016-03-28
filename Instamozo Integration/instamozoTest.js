@@ -38,8 +38,8 @@ module.exports = function (app) {
      var options = {
      url: "https://www.instamojo.com/api/1.1/debug/",
      headers: {
-     "X-Api-Key": '30b9511f5b66d5c2dffba61cf7c6646e',
-     "X-Auth-Token": '6d296b726c8e7400ba11c4fd2d85797a',
+     "X-Api-Key": '',
+     "X-Auth-Token": '',
      }
      }
      //            response.send(200, data);
@@ -58,8 +58,8 @@ module.exports = function (app) {
         //console.log(amount,purpose);
         var options = {
             url: "https://www.instamojo.com/api/1.1/payment-requests/",
-            "X-Api-Key": '30b9511f5b66d5c2dffba61cf7c6646e',
-            "X-Auth-Token": '6d296b726c8e7400ba11c4fd2d85797a'
+            "X-Api-Key": '',
+            "X-Auth-Token": ''
 
             contentType: 'application/json',
                 "amount": 300,
