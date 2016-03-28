@@ -2,8 +2,8 @@ var request = require('request');
 var options = {
     url: "https://www.instamojo.com/api/1.1/debug/",
     headers: {
-        "X-Api-Key": '30b9511f5b66d5c2dffba61cf7c6646e',
-        "X-Auth-Token": '6d296b726c8e7400ba11c4fd2d85797a'
+        "X-Api-Key": '',
+        "X-Auth-Token": ''
     },
     /*contentType: 'application/json',
     form: {
@@ -12,7 +12,7 @@ var options = {
         'buyer_name': "ramesh",
         'email': "a@a.com",
         'phone': "7845122356",
-        'longurl': "https://www.instamojo.com/@Neidhal/0aa444797597403b93707355866c6ec5",
+        'longurl': "https://www.instamojo.com/@/",
     }*/
 }
 //console.log(options.data);
