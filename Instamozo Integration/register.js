@@ -8,8 +8,8 @@
  var options = {
  url : 'https://www.instamojo.com/api/1.1/debug/',
  headers : {
- 'X-Api-Key' : '30b9511f5b66d5c2dffba61cf7c6646e',
- 'X-Auth-Token': '6d296b726c8e7400ba11c4fd2d85797a',
+ 'X-Api-Key' : '',
+ 'X-Auth-Token': '',
  'contentType' : 'application/json',
  },
 
@@ -27,8 +27,8 @@
  var options1 = {
  url : 'https://www.instamojo.com/api/1.1/payment-requests/',
  headers : {
- 'X-Api-Key' : '30b9511f5b66d5c2dffba61cf7c6646e',
- 'X-Auth-Token': '6d296b726c8e7400ba11c4fd2d85797a',
+ 'X-Api-Key' : '',
+ 'X-Auth-Token': '',
  'contentType' : 'application/json',
  },
 
@@ -54,13 +54,13 @@ function paynow() {
 
 
     /*xhr.setRequestHeader("Access-Control-Allow-Headers", "X-Api-Key 30b9511f5b66d5c2dffba61cf7c6646e", "X-Auth-TOKEN 6d296b726c8e7400ba11c4fd2d85797a, Access-Control-Allow-Origin, Authorization, Origin, x-requested-with, Content-Type, Content-Range, Content-Disposition, Content-Description") */
-  //  xhr.setRequestHeader('X-Api-Key', '30b9511f5b66d5c2dffba61cf7c6646e');
-   // xhr.setRequestHeader('X-Auth-TOKEN', '6d296b726c8e7400ba11c4fd2d85797a');
+  //  xhr.setRequestHeader('X-Api-Key', '');
+   // xhr.setRequestHeader('X-Auth-TOKEN', '');
 
     xhr.send({
         'headers': {
-            'X-Api-Key': '30b9511f5b66d5c2dffba61cf7c6646e',
-            'X-Auth-TOKEN': '6d296b726c8e7400ba11c4fd2d85797a',
+            'X-Api-Key': '',
+            'X-Auth-TOKEN': '',
         },
         'data': {
             'amount': '340',
