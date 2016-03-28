@@ -14,7 +14,7 @@ var request = require('request');
 var options = {
     "url": 'https://api.zaakpay.com/checktransaction',
     "form": {
-        'merchantIdentifier': "51eb974443284de0a95188cd95dad180",
+        'merchantIdentifier': "",
         'orderId': "OID005",
         'mode': '0'
     }
@@ -32,7 +32,7 @@ query = query.replace(/[\[\]]+/g, '');
 
 
 console.log("query--->>>>>>", query);
-options.form['checksum'] = crypto.createHmac('sha256', "de2171d6d41e46b1952ad61f55f8e5a4").update(query).digest('hex');
+options.form['checksum'] = crypto.createHmac('sha256', "").update(query).digest('hex');
 
 request.post(options, function (err, httpResponse, body) {
 
