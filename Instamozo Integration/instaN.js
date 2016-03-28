@@ -29,8 +29,8 @@ app.use(bodyParser.urlencoded
 app.get('/instaA',function(req,res) {
     var options = {
 
-            "api_key": '30b9511f5b66d5c2dffba61cf7c6646e',
-            "auth_token": '6d296b726c8e7400ba11c4fd2d85797a',
+            "api_key": '',
+            "auth_token": '',
         "amount" : "495",
         "purpose" : "online shopping"
 
